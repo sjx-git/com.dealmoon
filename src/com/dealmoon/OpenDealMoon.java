@@ -11,8 +11,8 @@ public class OpenDealMoon {
     public static void Open() {
 
 		//先配置本机的Chrome配置
-        System.setProperty("webdriver.chrome.marionette","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");//chromedriver服务地址
-		System.setProperty("webdriver.chrome.driver","D:\\driver\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.marionette","C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");//chromedriver服务地址
+		//System.setProperty("webdriver.chrome.driver","D:\\driver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 		// 打开firefox浏览器
 		//输入要访问的地址 北美主站
