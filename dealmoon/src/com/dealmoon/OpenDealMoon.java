@@ -3,23 +3,22 @@
  */
 
 package com.dealmoon;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
-
 public class OpenDealMoon {
 	public static  WebDriver driver;
-
     public static void Open() {
 		//firefox的启动方法
         System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
-        File file = new File("C:\\Users\\admin\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\phdw9qsn.default\\extensions\\firebug@software.joehewitt.com.xpi");
+        //公司的firebug配置地址
+        //File file = new File("C:\\Users\\admin\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\phdw9qsn.default\\extensions\\firebug@software.joehewitt.com.xpi");
+       //家里的firefox配置地址
+        File file = new File("C:\\Users\\sjx\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\a1wpiqpa.default\\extensions\\firebug@software.joehewitt.com.xpi");
         FirefoxProfile profile = new FirefoxProfile();
         try {
             profile.addExtension(file);
@@ -53,7 +52,6 @@ public class OpenDealMoon {
        // System.out.print(driver.findElements(By.tagName("i")));
        Set <String> b = driver.getWindowHandles();
        System.out.print(b);
-        System.out.println("sss ");
 		//调用首页判断方法
        // HomeJudgement.homejudgement();
 		
