@@ -7,9 +7,18 @@ import static org.testng.Assert.assertEquals;
 public class HomeJudgement extends OpenDealMoon {
 
 	public static void homejudgement() {
-	    //定位有问题
-		//driver.findElement(By.xpath(".//*[@id='haitaoPopup']/div/div/a[2]")).click();
+        /**
+         * //定位有问题
+         *         try {
+         *             Thread.sleep(30000);
+         *         } catch (InterruptedException e) {
+         *             e.printStackTrace();
+         *         }
+         */
+
+
 		//获取当前访问的url链接
+        System.out.print(driver.getCurrentUrl());
 		String url = driver.getCurrentUrl();
 		//获取当前访问的url title 
 		String title = driver.getTitle();
