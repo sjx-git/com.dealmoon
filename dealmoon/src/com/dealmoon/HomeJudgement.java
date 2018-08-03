@@ -2,7 +2,7 @@ package com.dealmoon;
 /**进行首页的判定
  * 
  */
-import static org.testng.Assert.assertEquals;
+import static com.thoughtworks.selenium.SeleneseTestBase.assertEquals;
 
 public class HomeJudgement extends OpenDealMoon {
 
