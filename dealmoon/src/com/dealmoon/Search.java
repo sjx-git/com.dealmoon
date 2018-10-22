@@ -6,7 +6,6 @@ package com.dealmoon;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import com.dealmoon.Keyword;
 public class Search extends OpenDealMoon{
 
 	public static void SearchKeyword() {
@@ -14,18 +13,25 @@ public class Search extends OpenDealMoon{
 		WebElement SL = driver.findElement(By.id("t_keyword"));
 		SL.clear();
 		//输入要搜索的关键字
-		SL.sendKeys(Keyword.Keyword());
+        String key = Keyword.Keyword();
+        System.out.println("key 的值是： "+ key);
+		SL.sendKeys(key);
 		//点击搜索按钮
-		WebElement SS = driver.findElement(By.className("icon-search-top"));
+		WebElement SS = driver.findElement(By.xpath(".//*[@id='frmSearch']/div/div"));
 		SS.click();
-		
-		//获取所要验证的文本信息
-		String  validate= driver.findElement(By.xpath(".//*[@class='mlist ']/div[2]/div[1]/div/h2")).getText();
-		
+		try {
+		    Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //获取所要验证的文本信息
+		String  validate= driver.findElement(By.xpath(".//*[@id='US']/div[2]/div/h1/a")).getText();
+		System.out.println(validate);
+		System.out.println("GetKeywordFromDeal.getkeyword() 的值是 "+ GetKeywordFromDeal.getkeyword());
 		if (validate.equals(GetKeywordFromDeal.getkeyword())) {
-			System.out.println("按关键字 ：" + Keyword.Keyword() + "  --搜索成功");
+			System.out.println("按关键字 ：" + key + "  --搜索成功");
 		}else {
-			System.out.println("按关键字 ：" + Keyword.Keyword() + "  --搜索失败！" + validate);
+			System.out.println("按关键字 ：" + key + "  --搜索失败！" + validate);
 		}
 		
 		

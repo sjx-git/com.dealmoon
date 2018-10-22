@@ -4,7 +4,7 @@ public class Debug extends OpenDealMoon {
 
 	public static void main(String[] args) {
 		OpenDealMoon.Open();
-		//Search.SearchKeyword();
+		Search.SearchKeyword();
 		//SigninTestNull.SigninTestNullMailNullPass();
 		//Signin.signin();
 		//MyFavorite.myfavorite();
@@ -16,7 +16,7 @@ public class Debug extends OpenDealMoon {
 		//GetDealId.getdealid();
 		//Keyword.Keyword();
 		//JudgementPageElement.judgementpageelement();
-		
+		//GetKeywordFromDeal.getkeyword();
 		
 
 

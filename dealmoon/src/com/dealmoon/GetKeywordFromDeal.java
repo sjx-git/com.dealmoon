@@ -11,10 +11,11 @@ public class GetKeywordFromDeal extends OpenDealMoon{
 			e.printStackTrace();
 		}
 		//先定位相关位置，然后获取其对应的title
-		String text = driver.findElement(By.xpath(".//*[@class='mlist ']/div[2]/div[1]/div/h2/a/span[1]/span")).getText();
+		String text = driver.findElement(By.xpath(".//*[@id='t_keyword']")).getAttribute("placeholder");
+		//System.out.println(text);
 		//将获取到的title打印 用来debug
 		//String conent = text.toString();
-		//system.out.println(conent);
+		//System.out.println(conent);
 		return  text; 
 
 	}
