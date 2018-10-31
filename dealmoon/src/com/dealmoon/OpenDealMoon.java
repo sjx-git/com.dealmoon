@@ -22,7 +22,7 @@ public class OpenDealMoon {
         } catch (IOException e) {
             e.printStackTrace();
             }
-         profile.setPreference("extensions.firebug.currentVersion", "2.0.19");
+         profile.setPreference("extensions.firebug.currentVersion", "2..19");
         //active firebug extensions
        profile.setPreference("extensions.firebug.allPagesActivation", "on");
         //ProfilesIni pi = new ProfilesIni();
@@ -41,7 +41,7 @@ public class OpenDealMoon {
 		//窗口最大化
 		driver.manage().window().maximize();
         try {
-                     Thread.sleep(10000);
+                     Thread.sleep(1);
                  } catch (InterruptedException e) {
                       e.printStackTrace();
         }

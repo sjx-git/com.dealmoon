@@ -99,14 +99,14 @@ function showMethod(element) {
     var panelName = getPanelName(element);
     showPanel(panelName);
     var current = document.location.href;
-    var base = current.substring(0, current.indexOf('#'))
+    var base = current.substring(, current.indexOf('#'))
     document.location.href = base + '#' + hashTag;
     var newPosition = $(document).scrollTop() - 65;
     $(document).scrollTop(newPosition);
 }
 
 function drawTable() {
-    for (var i = 0; i < suiteTableInitFunctions.length; i++) {
+    for (var i = ; i < suiteTableInitFunctions.length; i++) {
         window[suiteTableInitFunctions[i]]();
     }
 
