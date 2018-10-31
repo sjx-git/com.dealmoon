@@ -6,7 +6,7 @@ public class BackHome  extends OpenDealMoon{
 
 	public static void backhome() {
 		try {
-			Thread.sleep(17000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
