@@ -1,0 +1,58 @@
+自动化姿势攒积：
+1.
+    //driver.get("http://www.dealmoon.com/");
+        //清除所有cookie信息并刷新页面
+        driver.manage().deleteAllCookies();
+        Set c1Cookies=driver.manage().getCookies();
+        System.out.println("cookie总数为"+c1Cookies.size());
+2.
+    //先配置本机的firefox配置
+        ProfilesIni pi = new ProfilesIni();
+        FirefoxProfile profile = pi.getProfile("default");
+3.
+//定位到所属iframe页面，切换过去，再进行定位
+        WebElement middkle = driver.findElement(By.xpath("//iframe[contains(@src,'dealmoon')]"));
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(middkle);
+4.
+//模拟鼠标放上去之后的展示效果
+             Actions builder = new Actions(driver);
+                builder.moveToElement(driver.findElement(By.className("login_user_name"))).perform();
+5.
+//模拟鼠标放上去之后的展示效果
+             Actions builder = new Actions(driver);
+                builder.moveToElement(driver.findElement(By.className("login_user_name"))).perform();
+                builder.moveToElement(driver.findElement(By.xpath("//a[contains(@href,'favorite')]"))).click().perform();;
+6.
+xml中：
+
+    <class name = "TestNG.TestNG"/>，格式为：包名.类名
+7.
+TestNG中的执行顺序是按照字母+数字的顺序执行的，不会依照所写的方法前后顺序执行，可以用：
+            @Test（priority = 1）来设定执行顺序
+8.
+忽略执行：@Test（enable = false）可以忽略暂时不想执行的方法
+9.
+转义字符方法
+          String str1 = "\"name\"";//字符串两边含有双引号      
+          String str2 = "name \"is\" zcr";//字符串中间含有双引号      
+          String str3 = "\\name";//使用转义字符还可以使字符串包含其他字符   
+10.
+在testng.xml中，可以控制测试用例按顺序执行。
+当preserve-order="true"是，可以保证节点下面的方法是按顺序执行的
+11.
+selenium中如果去寻找元素，而元素不存在的话，通常会抛出NoSuchElementException 导致测试失败，但有时候，我们需要去确保页面元素不存在，才是我们正确的验收条件下面的方法可以用来判定页面元素是否存在
+public boolean doesWebElementExist(WebDriver driver, By selector)
+ { 
+        try { 
+                driver.findElement(selector); 
+               return true; 
+        } catch (NoSuchElementException e) { 
+            return false; 
+        } 
+    } 
+12.启动本机器的firefox配置： 
+
+　　每次启动如果都像上面那样在代码里面配置profile比较麻烦，可以使用下面的方法启动本机器的firefox的配置，换句话说就是我们可以事先配置本机的firefox然后用webdriver启动它，这样本机上的firefox安装了什么插件都可以直接使用了，不需要在配置profile:
+ProfilesIni pi = new ProfilesIni();
+FirefoxProfile profile = pi.getProfile("default");
